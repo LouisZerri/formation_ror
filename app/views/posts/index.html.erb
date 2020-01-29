@@ -1,0 +1,16 @@
+<h1 style="padding-bottom: 1em;">Articles du site</h1>
+
+<% @posts.each do |post|  %>
+  <h2><%= post.name %></h2>
+  <p style="padding-top: 5px;"><%= post.content %></p>
+  <i>Créé : <%= time_ago_in_words(post.created_at) %></i>
+  <p>
+    <a href="<%= post_path(post.id) %>" class="btn btn-primary">Lire la suite</a>
+    <a href="<%= edit_post_path(post.id) %>" class="btn btn-secondary">Modifier l'article</a>
+    <a href="<%= post_path(post.id) %>" class="btn btn-danger" data-confirm="Êtes-vous sur ?" data-method="DELETE">Supprimer l'article</a>
+  </p>
+<% end %>
+
+<p style="text-align: center">
+  <a href="<%= new_post_path %>" class="btn btn-success">Créer un article</a>
+</p>

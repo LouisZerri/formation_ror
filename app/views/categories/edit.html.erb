@@ -1,0 +1,13 @@
+<h1>Modifier une catégorie</h1>
+
+<%= form_for @category do |f| %>
+  <div class="form-group">
+    <%=f.text_field :name, class: 'form-control', placeholder: 'Nom' %>
+  </div>
+  <div class="form-group">
+    <%=f.text_field :slug, class: 'form-control', placeholder: "Url" %>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Modifier la catégorie</button>
+  </div>
+<% end %>
